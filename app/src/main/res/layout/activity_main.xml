@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/power_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:progressDrawable="@drawable/power_progressbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/speed_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/archivo_black"
+            android:text="0"
+            android:textColor="#444FB6"
+            android:textSize="150sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/vitesse_unite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="km/h"
+            android:textColor="#444FB6"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/speed_val"
+            app:layout_constraintStart_toEndOf="@+id/speed_val" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <SeekBar
+        android:id="@+id/speed_test"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="600dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/battery_test"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="@+id/battery_progress"
+        app:layout_constraintEnd_toStartOf="@+id/battery_design"
+        app:layout_constraintStart_toStartOf="@+id/battery_progress"
+        app:layout_constraintTop_toTopOf="@+id/battery_progress" />
+
+    <SeekBar
+        android:id="@+id/power_test"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="600dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:alpha="0"
+        app:layout_constraintBottom_toTopOf="@+id/battery_test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/battery_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:progressDrawable="@drawable/battery_progressbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speed" />
+
+    <TextView
+        android:id="@+id/battery_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black"
+        android:text="0%"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#CC000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/battery_progress"
+        app:layout_constraintEnd_toEndOf="@+id/battery_progress"
+        app:layout_constraintStart_toStartOf="@+id/battery_progress"
+        app:layout_constraintTop_toTopOf="@+id/battery_progress" />
+
+    <View
+        android:id="@+id/battery_design"
+        android:layout_width="4dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:background="#CC000000"
+        app:layout_constraintBottom_toBottomOf="@+id/battery_progress"
+        app:layout_constraintStart_toEndOf="@+id/battery_progress"
+        app:layout_constraintTop_toTopOf="@+id/battery_progress" />
+
+    <ImageView
+        android:id="@+id/battery_temp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/temp_battery" />
+
+    <ImageView
+        android:id="@+id/motor_temp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/temp_motor" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/param_layout"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_conf_acc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Configuration accelerometre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/show_param_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="190dp"
+        android:rotation="90"
+        android:rotationX="0"
+        android:rotationY="0"
+        app:layout_constraintBottom_toBottomOf="@+id/param_layout"
+        app:layout_constraintEnd_toEndOf="@+id/param_layout"
+        app:layout_constraintTop_toTopOf="@+id/param_layout"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
